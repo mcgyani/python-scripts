@@ -37,8 +37,6 @@ html = urllib2.urlopen('http://localhost/server-status').read()
 parser = DataParser()
 parser.feed(html)
 
-script, SS_nr, SS_max = argv
-
 try:
         script, SS_nr, SS_max = argv
 
