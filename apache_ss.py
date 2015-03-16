@@ -55,4 +55,4 @@ try:
                 else:
                         print 0, SS_values
 except ValueError:
-        print 'Suppli params: number of procs AND time'
+        print 'Supply params: number of procs AND time'
