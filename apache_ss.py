@@ -39,19 +39,22 @@ parser.feed(html)
 
 script, SS_nr, SS_max = argv
 
-def SS_stat(argv):
-	SS_index = parser.headers.index('SS')			
-	SS_values= parser.data[SS_index::len(parser.headers)]
+try:
+        script, SS_nr, SS_max = argv
 
-	max_reached = 0
+        def SS_stat(arg):
+                SS_index = parser.headers.index('SS')
+                SS_values= parser.data[SS_index::len(parser.headers)]
 
-	for item in SS_values:
-		if int(item) > int(SS_max):
-	                max_reached+=1
+                max_reached = 0
 
-	if  max_reached >= int(SS_nr):
-	        return 1, SS_values
-	else:
-		return 0, SS_values 	 	
-		
-print SS_stat(argv)
+                for item in SS_values:
+                        if int(item) > int(SS_max):
+                                max_reached+=1
+
+                if  max_reached >= int(SS_nr):
+                        print 1, SS_values
+                else:
+                        print 0, SS_values
+except ValueError:
+        print 'Suppli params: number of procs AND time'
