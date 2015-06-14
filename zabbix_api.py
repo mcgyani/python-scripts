@@ -30,5 +30,4 @@ trigger_on = zapi.trigger.get({
 for trigeron in trigger_on:
 	print trigeron["description"]
 	
-#print hostgroup
 print json.dumps(trigger_on, indent = 4) 
